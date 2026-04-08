@@ -1,18 +1,18 @@
-# 지원
+# Support
 
-## 도움 받는 방법
+## How to get help
 
-중복을 피하기 위해 새로운 이슈나 토론을 만들기 전에 기존 [이슈](https://github.com/github/spec-kit/issues)와 [토론](https://github.com/github/spec-kit/discussions)을 먼저 검색해 주세요.
+Please search existing [issues](https://github.com/github/spec-kit/issues) and [discussions](https://github.com/github/spec-kit/discussions) before creating new ones to avoid duplicates.
 
-- 시작하기 안내와 문제 해결 팁은 [README](./README.md)를 참조하세요
-- 스펙 기반 개발 프로세스에 대한 상세한 문서는 [종합 가이드](./spec-driven.md)를 확인하세요
-- Spec Kit 사용법이나 스펙 기반 개발 방법론에 대한 질문은 [GitHub Discussions](https://github.com/github/spec-kit/discussions)에서 문의하세요
-- 버그 리포트와 기능 요청은 [GitHub 이슈](https://github.com/github/spec-kit/issues/new)를 열어주세요
+- Review the [README](./README.md) for getting started instructions and troubleshooting tips
+- Check the [comprehensive guide](./spec-driven.md) for detailed documentation on the Spec-Driven Development process
+- Ask in [GitHub Discussions](https://github.com/github/spec-kit/discussions) for questions about using Spec Kit or the Spec-Driven Development methodology
+- Open a [GitHub issue](https://github.com/github/spec-kit/issues/new) for bug reports and feature requests
 
-## 프로젝트 상태
+## Project Status
 
-**Spec Kit**은 GitHub 직원과 커뮤니티에 의해 활발히 개발 및 유지관리되고 있습니다. 시간이 허용하는 한 지원, 기능 요청, 커뮤니티 질문에 최선을 다해 응답하겠습니다.
+**Spec Kit** is under active development and maintained by GitHub staff and the community. We will do our best to respond to support, feature requests, and community questions as time permits.
 
-## GitHub 지원 정책
+## GitHub Support Policy
 
-이 프로젝트에 대한 지원은 위에 나열된 리소스로 제한됩니다.
+Support for this project is limited to the resources listed above.
