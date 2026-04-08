@@ -1,25 +1,25 @@
-# Development Notes
+# 개발 노트
 
-Spec Kit is a toolkit for spec-driven development. At its core, it is a coordinated set of prompts, templates, scripts, and CLI/integration assets that define and deliver a spec-driven workflow for AI coding agents. This document is a starting point for people modifying Spec Kit itself, with a compact orientation to the key project documents and repository organization.
+Spec Kit은 사양 중심 개발(spec-driven development)을 위한 툴킷입니다. 핵심적으로는 AI 코딩 에이전트를 위한 사양 중심 워크플로우를 정의하고 제공하는 프롬프트, 템플릿, 스크립트, CLI/통합 에셋의 통합 모음입니다. 이 문서는 Spec Kit 자체를 수정하려는 사람들을 위한 시작점으로, 주요 프로젝트 문서와 저장소 구조에 대한 간략한 안내를 제공합니다.
 
-**Essential project documents:**
+**필수 프로젝트 문서:**
 
-| Document                                                   | Role                                                                                  |
+| 문서                                                       | 역할                                                                                  |
 | ---------------------------------------------------------- | ------------------------------------------------------------------------------------- |
-| [README.md](README.md)                                     | Primary user-facing overview of Spec Kit and its workflow.                            |
-| [DEVELOPMENT.md](DEVELOPMENT.md)                           | This document.                                                                        |
-| [spec-driven.md](spec-driven.md)                           | End-to-end explanation of the Spec-Driven Development workflow supported by Spec Kit. |
-| [RELEASE-PROCESS.md](.github/workflows/RELEASE-PROCESS.md) | Release workflow, versioning rules, and changelog generation process.                 |
-| [docs/index.md](docs/index.md)                             | Entry point to the `docs/` documentation set.                                         |
-| [CONTRIBUTING.md](CONTRIBUTING.md)                         | Contribution process, review expectations, and required development practices.        |
-| [TESTING.md](TESTING.md)                                   | Validation strategy and testing procedures.                                           |
+| [README.md](README.md)                                     | Spec Kit 및 워크플로우에 대한 기본 사용자용 개요.                                     |
+| [DEVELOPMENT.md](DEVELOPMENT.md)                           | 이 문서.                                                                              |
+| [spec-driven.md](spec-driven.md)                           | Spec Kit이 지원하는 사양 중심 개발(Spec-Driven Development) 워크플로우의 전체 설명.   |
+| [RELEASE-PROCESS.md](.github/workflows/RELEASE-PROCESS.md) | 릴리즈 워크플로우, 버전 관리 규칙, 변경 로그 생성 프로세스.                          |
+| [docs/index.md](docs/index.md)                             | `docs/` 문서 세트의 진입점.                                                           |
+| [CONTRIBUTING.md](CONTRIBUTING.md)                         | 기여 프로세스, 리뷰 기대 사항, 필수 개발 관행.                                        |
+| [TESTING.md](TESTING.md)                                   | 검증 전략 및 테스트 절차.                                                             |
 
-**Main repository components:**
+**주요 저장소 구성 요소:**
 
-| Directory          | Role                                                                                        |
+| 디렉토리           | 역할                                                                                        |
 | ------------------ | ------------------------------------------------------------------------------------------- |
-| `templates/`       | Prompt assets and templates that define the core workflow behavior and generated artifacts. |
-| `scripts/`         | Supporting scripts used by the workflow, setup, and repository tooling.                     |
-| `src/specify_cli/` | Python source for the `specify` CLI, including agent-specific assets.                       |
-| `extensions/`      | Extension-related docs, catalogs, and supporting assets.                                    |
-| `presets/`         | Preset-related docs, catalogs, and supporting assets.                                       |
+| `templates/`       | 핵심 워크플로우 동작과 생성 산출물을 정의하는 프롬프트 에셋 및 템플릿.                      |
+| `scripts/`         | 워크플로우, 설정, 저장소 툴링에서 사용되는 지원 스크립트.                                   |
+| `src/specify_cli/` | `specify` CLI의 Python 소스 코드(에이전트별 에셋 포함).                                     |
+| `extensions/`      | 익스텐션 관련 문서, 카탈로그, 지원 에셋.                                                    |
+| `presets/`         | 프리셋 관련 문서, 카탈로그, 지원 에셋.                                                      |

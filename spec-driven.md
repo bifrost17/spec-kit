@@ -1,112 +1,112 @@
 # Specification-Driven Development (SDD)
 
-## The Power Inversion
+## 권력의 역전
 
-For decades, code has been king. Specifications served code—they were the scaffolding we built and then discarded once the "real work" of coding began. We wrote PRDs to guide development, created design docs to inform implementation, drew diagrams to visualize architecture. But these were always subordinate to the code itself. Code was truth. Everything else was, at best, good intentions. Code was the source of truth, and as it moved forward, specs rarely kept pace. As the asset (code) and the implementation are one, it's not easy to have a parallel implementation without trying to build from the code.
+수십 년간 코드가 왕이었습니다. 명세는 코드를 위해 존재했습니다. 명세는 "진짜 작업"인 코딩이 시작되면 버려지는 발판이었습니다. PRD를 작성해 개발 방향을 잡고, 설계 문서를 만들어 구현을 안내하고, 다이어그램을 그려 아키텍처를 시각화했습니다. 하지만 이 모든 것은 항상 코드 자체에 종속되어 있었습니다. 코드가 곧 진실이었습니다. 그 외의 것들은 기껏해야 좋은 의도에 불과했습니다. 코드가 진실의 원천이었고, 코드가 앞으로 나아가는 동안 명세는 좀처럼 그 속도를 따라가지 못했습니다. 자산(코드)과 구현이 하나이기 때문에, 코드로부터 병렬 구현을 시도하지 않고는 이를 유지하기가 쉽지 않습니다.
 
-Spec-Driven Development (SDD) inverts this power structure. Specifications don't serve code—code serves specifications. The Product Requirements Document (PRD) isn't a guide for implementation; it's the source that generates implementation. Technical plans aren't documents that inform coding; they're precise definitions that produce code. This isn't an incremental improvement to how we build software. It's a fundamental rethinking of what drives development.
+Spec-Driven Development (SDD)는 이 권력 구조를 역전시킵니다. 명세가 코드를 위해 존재하는 것이 아니라, 코드가 명세를 위해 존재합니다. Product Requirements Document (PRD)는 구현을 안내하는 가이드가 아니라 구현을 생성하는 원천입니다. 기술 계획은 코딩을 안내하는 문서가 아니라 코드를 생산하는 정밀한 정의입니다. 이것은 소프트웨어를 만드는 방식의 점진적 개선이 아닙니다. 개발을 이끄는 것이 무엇인지에 대한 근본적인 재고입니다.
 
-The gap between specification and implementation has plagued software development since its inception. We've tried to bridge it with better documentation, more detailed requirements, stricter processes. These approaches fail because they accept the gap as inevitable. They try to narrow it but never eliminate it. SDD eliminates the gap by making specifications and their concrete implementation plans born from the specification executable. When specifications and implementation plans generate code, there is no gap—only transformation.
+명세와 구현 사이의 간극은 소프트웨어 개발이 시작된 이래로 오랜 골칫거리였습니다. 더 나은 문서, 더 상세한 요구 사항, 더 엄격한 프로세스로 이를 메우려 했습니다. 이러한 접근 방식들은 간극을 불가피한 것으로 받아들이기 때문에 실패합니다. 좁히려 하지만 결코 없애지는 못합니다. SDD는 명세와 그로부터 탄생한 구체적인 구현 계획을 실행 가능하게 만듦으로써 이 간극을 제거합니다. 명세와 구현 계획이 코드를 생성할 때, 간극은 존재하지 않습니다. 오직 변환만이 있을 뿐입니다.
 
-This transformation is now possible because AI can understand and implement complex specifications, and create detailed implementation plans. But raw AI generation without structure produces chaos. SDD provides that structure through specifications and subsequent implementation plans that are precise, complete, and unambiguous enough to generate working systems. The specification becomes the primary artifact. Code becomes its expression (as an implementation from the implementation plan) in a particular language and framework.
+이 변환이 가능해진 것은 AI가 복잡한 명세를 이해하고 구현하며 상세한 구현 계획을 만들 수 있게 되었기 때문입니다. 하지만 구조 없는 원시적인 AI 생성은 혼돈을 낳습니다. SDD는 작동하는 시스템을 생성할 만큼 정밀하고, 완전하며, 명확한 명세와 그에 따른 구현 계획을 통해 구조를 제공합니다. 명세가 주요 산출물이 됩니다. 코드는 (구현 계획으로부터의 구현으로서) 특정 언어와 프레임워크로 표현된 결과물이 됩니다.
 
-In this new world, maintaining software means evolving specifications. The intent of the development team is expressed in natural language ("**intent-driven development**"), design assets, core principles and other guidelines. The **lingua franca** of development moves to a higher level, and code is the last-mile approach.
+이 새로운 세계에서 소프트웨어를 유지한다는 것은 명세를 진화시키는 것을 의미합니다. 개발 팀의 의도는 자연어("**의도 중심 개발(intent-driven development)**"), 설계 자산, 핵심 원칙 및 기타 가이드라인으로 표현됩니다. 개발의 **공통 언어(lingua franca)**는 더 높은 수준으로 이동하고, 코드는 마지막 단계의 접근 방식이 됩니다.
 
-Debugging means fixing specifications and their implementation plans that generate incorrect code. Refactoring means restructuring for clarity. The entire development workflow reorganizes around specifications as the central source of truth, with implementation plans and code as the continuously regenerated output. Updating apps with new features or creating a new parallel implementation because we are creative beings, means revisiting the specification and creating new implementation plans. This process is therefore a 0 -> 1, (1', ..), 2, 3, N.
+디버깅이란 잘못된 코드를 생성하는 명세와 구현 계획을 수정하는 것을 의미합니다. 리팩토링이란 명확성을 위해 구조를 재정립하는 것을 의미합니다. 전체 개발 워크플로우가 명세를 중심 진실의 원천으로, 구현 계획과 코드를 지속적으로 재생성되는 출력물로 삼아 재편됩니다. 새로운 기능으로 앱을 업데이트하거나, 창의적인 존재로서 새로운 병렬 구현을 생성하는 것은 명세를 재검토하고 새로운 구현 계획을 만드는 것을 의미합니다. 따라서 이 프로세스는 0 -> 1, (1', ..), 2, 3, N 입니다.
 
-The development team focuses in on their creativity, experimentation, their critical thinking.
+개발 팀은 창의성, 실험, 비판적 사고에 집중합니다.
 
-## The SDD Workflow in Practice
+## 실제 SDD 워크플로우
 
-The workflow begins with an idea—often vague and incomplete. Through iterative dialogue with AI, this idea becomes a comprehensive PRD. The AI asks clarifying questions, identifies edge cases, and helps define precise acceptance criteria. What might take days of meetings and documentation in traditional development happens in hours of focused specification work. This transforms the traditional SDLC—requirements and design become continuous activities rather than discrete phases. This is supportive of a **team process**, where team-reviewed specifications are expressed and versioned, created in branches, and merged.
+워크플로우는 하나의 아이디어로 시작됩니다. 종종 막연하고 불완전한 아이디어입니다. AI와의 반복적인 대화를 통해 이 아이디어는 포괄적인 PRD가 됩니다. AI는 명확화 질문을 하고, 엣지 케이스를 식별하며, 정밀한 인수 기준을 정의하는 데 도움을 줍니다. 전통적인 개발에서 며칠씩 걸리는 회의와 문서 작업이 몇 시간의 집중적인 명세 작업으로 이루어집니다. 이는 전통적인 SDLC를 변화시킵니다. 요구 사항과 설계가 별개의 단계가 아닌 지속적인 활동이 됩니다. 이는 팀이 검토한 명세가 표현되고 버전 관리되며, 브랜치에서 생성되고 병합되는 **팀 프로세스**를 지원합니다.
 
-When a product manager updates acceptance criteria, implementation plans automatically flag affected technical decisions. When an architect discovers a better pattern, the PRD updates to reflect new possibilities.
+프로덕트 매니저가 인수 기준을 업데이트하면, 구현 계획은 자동으로 영향을 받는 기술 결정에 플래그를 표시합니다. 아키텍트가 더 나은 패턴을 발견하면, PRD가 새로운 가능성을 반영하도록 업데이트됩니다.
 
-Throughout this specification process, research agents gather critical context. They investigate library compatibility, performance benchmarks, and security implications. Organizational constraints are discovered and applied automatically—your company's database standards, authentication requirements, and deployment policies seamlessly integrate into every specification.
+이 명세 프로세스 전반에 걸쳐 리서치 에이전트들이 중요한 맥락을 수집합니다. 라이브러리 호환성, 성능 벤치마크, 보안 영향을 조사합니다. 조직적 제약 사항이 자동으로 발견되고 적용됩니다. 회사의 데이터베이스 표준, 인증 요구 사항, 배포 정책이 모든 명세에 원활하게 통합됩니다.
 
-From the PRD, AI generates implementation plans that map requirements to technical decisions. Every technology choice has documented rationale. Every architectural decision traces back to specific requirements. Throughout this process, consistency validation continuously improves quality. AI analyzes specifications for ambiguity, contradictions, and gaps—not as a one-time gate, but as an ongoing refinement.
+PRD로부터 AI는 요구 사항을 기술적 결정으로 매핑하는 구현 계획을 생성합니다. 모든 기술 선택에는 문서화된 근거가 있습니다. 모든 아키텍처 결정은 특정 요구 사항으로 소급됩니다. 이 프로세스 전반에 걸쳐 일관성 검증이 품질을 지속적으로 향상시킵니다. AI는 명세의 모호성, 모순, 공백을 분석합니다. 일회성 게이트가 아닌 지속적인 개선으로서 말입니다.
 
-Code generation begins as soon as specifications and their implementation plans are stable enough, but they do not have to be "complete." Early generations might be exploratory—testing whether the specification makes sense in practice. Domain concepts become data models. User stories become API endpoints. Acceptance scenarios become tests. This merges development and testing through specification—test scenarios aren't written after code, they're part of the specification that generates both implementation and tests.
+코드 생성은 명세와 구현 계획이 충분히 안정되는 즉시 시작되지만, "완성"될 필요는 없습니다. 초기 생성은 탐색적일 수 있습니다. 명세가 실제로 의미가 있는지 테스트하는 것입니다. 도메인 개념은 데이터 모델이 됩니다. 사용자 스토리는 API 엔드포인트가 됩니다. 인수 시나리오는 테스트가 됩니다. 이는 명세를 통해 개발과 테스트를 통합합니다. 테스트 시나리오는 코드 이후에 작성되는 것이 아니라, 구현과 테스트 모두를 생성하는 명세의 일부입니다.
 
-The feedback loop extends beyond initial development. Production metrics and incidents don't just trigger hotfixes—they update specifications for the next regeneration. Performance bottlenecks become new non-functional requirements. Security vulnerabilities become constraints that affect all future generations. This iterative dance between specification, implementation, and operational reality is where true understanding emerges and where the traditional SDLC transforms into a continuous evolution.
+피드백 루프는 초기 개발을 넘어 확장됩니다. 프로덕션 지표와 장애는 단순히 핫픽스를 촉발하는 것이 아니라, 다음 재생성을 위한 명세를 업데이트합니다. 성능 병목 현상은 새로운 비기능 요구 사항이 됩니다. 보안 취약점은 미래의 모든 생성에 영향을 미치는 제약 사항이 됩니다. 명세, 구현, 운영 현실 사이의 이 반복적인 상호작용에서 진정한 이해가 나타나고, 전통적인 SDLC가 지속적인 진화로 변환됩니다.
 
-## Why SDD Matters Now
+## 지금 SDD가 중요한 이유
 
-Three trends make SDD not just possible but necessary:
+세 가지 트렌드가 SDD를 가능할 뿐만 아니라 필수적으로 만들고 있습니다.
 
-First, AI capabilities have reached a threshold where natural language specifications can reliably generate working code. This isn't about replacing developers—it's about amplifying their effectiveness by automating the mechanical translation from specification to implementation. It can amplify exploration and creativity, support "start-over" easily, and support addition, subtraction, and critical thinking.
+첫째, AI 역량이 자연어 명세에서 신뢰성 있게 작동하는 코드를 생성할 수 있는 임계값에 도달했습니다. 이는 개발자를 대체하는 것이 아닙니다. 명세에서 구현으로의 기계적 변환을 자동화하여 효과를 증폭시키는 것입니다. 탐색과 창의성을 증폭시키고, "처음부터 시작"을 쉽게 지원하며, 추가, 삭제, 비판적 사고를 지원할 수 있습니다.
 
-Second, software complexity continues to grow exponentially. Modern systems integrate dozens of services, frameworks, and dependencies. Keeping all these pieces aligned with original intent through manual processes becomes increasingly difficult. SDD provides systematic alignment through specification-driven generation. Frameworks may evolve to provide AI-first support, not human-first support, or architect around reusable components.
+둘째, 소프트웨어 복잡성이 기하급수적으로 계속 증가하고 있습니다. 현대 시스템은 수십 가지 서비스, 프레임워크, 의존성을 통합합니다. 수동 프로세스를 통해 이 모든 요소들을 원래 의도와 일치시키는 것이 점점 더 어려워지고 있습니다. SDD는 명세 중심 생성을 통해 체계적인 일치를 제공합니다. 프레임워크는 인간 우선이 아닌 AI 우선 지원을 제공하거나, 재사용 가능한 구성 요소를 중심으로 설계하도록 진화할 수 있습니다.
 
-Third, the pace of change accelerates. Requirements change far more rapidly today than ever before. Pivoting is no longer exceptional—it's expected. Modern product development demands rapid iteration based on user feedback, market conditions, and competitive pressures. Traditional development treats these changes as disruptions. Each pivot requires manually propagating changes through documentation, design, and code. The result is either slow, careful updates that limit velocity, or fast, reckless changes that accumulate technical debt.
+셋째, 변화의 속도가 가속화되고 있습니다. 오늘날 요구 사항은 과거 어느 때보다 훨씬 빠르게 변합니다. 피보팅은 더 이상 예외적인 것이 아닙니다. 그것은 기대되는 일입니다. 현대 제품 개발은 사용자 피드백, 시장 상황, 경쟁 압력에 기반한 빠른 반복을 요구합니다. 전통적인 개발은 이러한 변화를 혼란으로 취급합니다. 각 피보팅은 문서, 설계, 코드 전반에 걸쳐 변경 사항을 수동으로 전파해야 합니다. 그 결과는 속도를 제한하는 느리고 신중한 업데이트이거나, 기술 부채를 축적하는 빠르고 무분별한 변경입니다.
 
-SDD can support what-if/simulation experiments: "If we need to re-implement or change the application to promote a business need to sell more T-shirts, how would we implement and experiment for that?"
+SDD는 가정/시뮬레이션 실험을 지원할 수 있습니다. "티셔츠를 더 많이 판매하는 비즈니스 요구를 촉진하기 위해 애플리케이션을 재구현하거나 변경해야 한다면, 어떻게 구현하고 실험하겠는가?"
 
-SDD transforms requirement changes from obstacles into normal workflow. When specifications drive implementation, pivots become systematic regenerations rather than manual rewrites. Change a core requirement in the PRD, and affected implementation plans update automatically. Modify a user story, and corresponding API endpoints regenerate. This isn't just about initial development—it's about maintaining engineering velocity through inevitable changes.
+SDD는 요구 사항 변경을 장애물에서 일반적인 워크플로우로 변환합니다. 명세가 구현을 이끌 때, 피보팅은 수동적인 재작성이 아닌 체계적인 재생성이 됩니다. PRD에서 핵심 요구 사항을 변경하면, 영향을 받는 구현 계획이 자동으로 업데이트됩니다. 사용자 스토리를 수정하면, 해당 API 엔드포인트가 재생성됩니다. 이것은 단순히 초기 개발에 관한 것이 아닙니다. 불가피한 변화를 통해 엔지니어링 속도를 유지하는 것에 관한 것입니다.
 
-## Core Principles
+## 핵심 원칙
 
-**Specifications as the Lingua Franca**: The specification becomes the primary artifact. Code becomes its expression in a particular language and framework. Maintaining software means evolving specifications.
+**공통 언어로서의 명세**: 명세가 주요 산출물이 됩니다. 코드는 특정 언어와 프레임워크로 표현된 결과물이 됩니다. 소프트웨어를 유지한다는 것은 명세를 진화시키는 것을 의미합니다.
 
-**Executable Specifications**: Specifications must be precise, complete, and unambiguous enough to generate working systems. This eliminates the gap between intent and implementation.
+**실행 가능한 명세**: 명세는 작동하는 시스템을 생성할 만큼 정밀하고, 완전하며, 명확해야 합니다. 이는 의도와 구현 사이의 간극을 없애줍니다.
 
-**Continuous Refinement**: Consistency validation happens continuously, not as a one-time gate. AI analyzes specifications for ambiguity, contradictions, and gaps as an ongoing process.
+**지속적 개선**: 일관성 검증은 일회성 게이트가 아닌 지속적으로 이루어집니다. AI는 지속적인 프로세스로서 명세의 모호성, 모순, 공백을 분석합니다.
 
-**Research-Driven Context**: Research agents gather critical context throughout the specification process, investigating technical options, performance implications, and organizational constraints.
+**리서치 중심 맥락**: 리서치 에이전트들은 명세 프로세스 전반에 걸쳐 중요한 맥락을 수집하며, 기술 옵션, 성능 영향, 조직적 제약 사항을 조사합니다.
 
-**Bidirectional Feedback**: Production reality informs specification evolution. Metrics, incidents, and operational learnings become inputs for specification refinement.
+**양방향 피드백**: 프로덕션 현실이 명세 진화에 반영됩니다. 지표, 장애, 운영상의 학습이 명세 개선을 위한 입력이 됩니다.
 
-**Branching for Exploration**: Generate multiple implementation approaches from the same specification to explore different optimization targets—performance, maintainability, user experience, cost.
+**탐색을 위한 브랜치 분기**: 동일한 명세에서 여러 구현 접근 방식을 생성하여 성능, 유지보수성, 사용자 경험, 비용 등 다양한 최적화 목표를 탐색합니다.
 
-## Implementation Approaches
+## 구현 방법
 
-Today, practicing SDD requires assembling existing tools and maintaining discipline throughout the process. The methodology can be practiced with:
+오늘날 SDD를 실천하려면 기존 도구들을 조합하고 프로세스 전반에 걸쳐 규율을 유지해야 합니다. 이 방법론은 다음을 통해 실천할 수 있습니다.
 
-- AI assistants for iterative specification development
-- Research agents for gathering technical context
-- Code generation tools for translating specifications to implementation
-- Version control systems adapted for specification-first workflows
-- Consistency checking through AI analysis of specification documents
+- 반복적인 명세 개발을 위한 AI 어시스턴트
+- 기술적 맥락 수집을 위한 리서치 에이전트
+- 명세를 구현으로 변환하는 코드 생성 도구
+- 명세 우선 워크플로우에 맞게 조정된 버전 관리 시스템
+- 명세 문서의 AI 분석을 통한 일관성 검사
 
-The key is treating specifications as the source of truth, with code as the generated output that serves the specification rather than the other way around.
+핵심은 명세를 진실의 원천으로 취급하고, 코드는 명세를 위해 존재하는 생성된 출력물로 취급하는 것입니다.
 
-## Streamlining SDD with Commands
+## 커맨드를 활용한 SDD 간소화
 
-The SDD methodology is significantly enhanced through three powerful commands that automate the specification → planning → tasking workflow:
+SDD 방법론은 명세 → 계획 → 작업 워크플로우를 자동화하는 세 가지 강력한 커맨드를 통해 크게 향상됩니다.
 
-### The `/speckit.specify` Command
+### `/speckit.specify` 커맨드
 
-This command transforms a simple feature description (the user-prompt) into a complete, structured specification with automatic repository management:
+이 커맨드는 간단한 기능 설명(사용자 프롬프트)을 자동 저장소 관리와 함께 완전하고 구조화된 명세로 변환합니다.
 
-1. **Automatic Feature Numbering**: Scans existing specs to determine the next feature number (e.g., 001, 002, 003, …, 1000 — expands beyond 3 digits automatically)
-2. **Branch Creation**: Generates a semantic branch name from your description and creates it automatically
-3. **Template-Based Generation**: Copies and customizes the feature specification template with your requirements
-4. **Directory Structure**: Creates the proper `specs/[branch-name]/` structure for all related documents
+1. **자동 기능 번호 지정**: 기존 명세를 스캔하여 다음 기능 번호를 결정합니다 (예: 001, 002, 003, …, 1000 — 3자리를 초과하면 자동으로 확장됨)
+2. **브랜치 생성**: 설명에서 시맨틱 브랜치 이름을 생성하고 자동으로 생성합니다
+3. **템플릿 기반 생성**: 요구 사항에 맞게 기능 명세 템플릿을 복사하고 맞춤 설정합니다
+4. **디렉토리 구조**: 모든 관련 문서를 위한 적절한 `specs/[branch-name]/` 구조를 생성합니다
 
-### The `/speckit.plan` Command
+### `/speckit.plan` 커맨드
 
-Once a feature specification exists, this command creates a comprehensive implementation plan:
+기능 명세가 존재하면, 이 커맨드는 포괄적인 구현 계획을 생성합니다.
 
-1. **Specification Analysis**: Reads and understands the feature requirements, user stories, and acceptance criteria
-2. **Constitutional Compliance**: Ensures alignment with project constitution and architectural principles
-3. **Technical Translation**: Converts business requirements into technical architecture and implementation details
-4. **Detailed Documentation**: Generates supporting documents for data models, API contracts, and test scenarios
-5. **Quickstart Validation**: Produces a quickstart guide capturing key validation scenarios
+1. **명세 분석**: 기능 요구 사항, 사용자 스토리, 인수 기준을 읽고 이해합니다
+2. **컨스티튜션 준수**: 프로젝트 컨스티튜션 및 아키텍처 원칙과의 일치를 보장합니다
+3. **기술적 변환**: 비즈니스 요구 사항을 기술 아키텍처 및 구현 세부 사항으로 변환합니다
+4. **상세 문서화**: 데이터 모델, API 계약, 테스트 시나리오를 위한 지원 문서를 생성합니다
+5. **빠른 시작 검증**: 주요 검증 시나리오를 담은 빠른 시작 가이드를 생성합니다
 
-### The `/speckit.tasks` Command
+### `/speckit.tasks` 커맨드
 
-After a plan is created, this command analyzes the plan and related design documents to generate an executable task list:
+계획이 생성된 후, 이 커맨드는 계획 및 관련 설계 문서를 분석하여 실행 가능한 작업 목록을 생성합니다.
 
-1. **Inputs**: Reads `plan.md` (required) and, if present, `data-model.md`, `contracts/`, and `research.md`
-2. **Task Derivation**: Converts contracts, entities, and scenarios into specific tasks
-3. **Parallelization**: Marks independent tasks `[P]` and outlines safe parallel groups
-4. **Output**: Writes `tasks.md` in the feature directory, ready for execution by a Task agent
+1. **입력**: `plan.md`(필수)를 읽고, 있는 경우 `data-model.md`, `contracts/`, `research.md`도 읽습니다
+2. **작업 도출**: 계약, 엔티티, 시나리오를 구체적인 작업으로 변환합니다
+3. **병렬화**: 독립적인 작업에 `[P]`를 표시하고 안전한 병렬 그룹을 제시합니다
+4. **출력**: 기능 디렉토리에 `tasks.md`를 작성하여 Task 에이전트가 실행할 준비를 합니다
 
-### Example: Building a Chat Feature
+### 예시: 채팅 기능 구현
 
-Here's how these commands transform the traditional development workflow:
+다음은 이 커맨드들이 전통적인 개발 워크플로우를 어떻게 변환하는지 보여줍니다.
 
-**Traditional Approach:**
+**전통적인 접근 방식:**
 
 ```text
 1. Write a PRD in a document (2-3 hours)
@@ -117,7 +117,7 @@ Here's how these commands transform the traditional development workflow:
 Total: ~12 hours of documentation work
 ```
 
-**SDD with Commands Approach:**
+**커맨드를 활용한 SDD 접근 방식:**
 
 ```bash
 # Step 1: Create the feature specification (5 minutes)
@@ -143,43 +143,43 @@ Total: ~12 hours of documentation work
 # - specs/003-chat-system/tasks.md (Task list derived from the plan)
 ```
 
-In 15 minutes, you have:
+15분 만에 다음을 갖출 수 있습니다.
 
-- A complete feature specification with user stories and acceptance criteria
-- A detailed implementation plan with technology choices and rationale
-- API contracts and data models ready for code generation
-- Comprehensive test scenarios for both automated and manual testing
-- All documents properly versioned in a feature branch
+- 사용자 스토리와 인수 기준이 포함된 완전한 기능 명세
+- 기술 선택과 근거가 담긴 상세한 구현 계획
+- 코드 생성 준비가 된 API 계약 및 데이터 모델
+- 자동화 및 수동 테스트 모두를 위한 포괄적인 테스트 시나리오
+- 기능 브랜치에 적절히 버전 관리된 모든 문서
 
-### The Power of Structured Automation
+### 구조화된 자동화의 힘
 
-These commands don't just save time—they enforce consistency and completeness:
+이 커맨드들은 단순히 시간을 절약하는 것이 아닙니다. 일관성과 완전성을 강제합니다.
 
-1. **No Forgotten Details**: Templates ensure every aspect is considered, from non-functional requirements to error handling
-2. **Traceable Decisions**: Every technical choice links back to specific requirements
-3. **Living Documentation**: Specifications stay in sync with code because they generate it
-4. **Rapid Iteration**: Change requirements and regenerate plans in minutes, not days
+1. **잊혀진 세부 사항 없음**: 템플릿이 비기능 요구 사항부터 오류 처리까지 모든 측면을 고려하도록 보장합니다
+2. **추적 가능한 결정**: 모든 기술 선택이 특정 요구 사항으로 연결됩니다
+3. **살아있는 문서**: 명세가 코드를 생성하기 때문에 코드와 동기화를 유지합니다
+4. **빠른 반복**: 요구 사항을 변경하고 며칠이 아닌 몇 분 만에 계획을 재생성합니다
 
-The commands embody SDD principles by treating specifications as executable artifacts rather than static documents. They transform the specification process from a necessary evil into the driving force of development.
+이 커맨드들은 명세를 정적 문서가 아닌 실행 가능한 산출물로 취급함으로써 SDD 원칙을 구현합니다. 이는 명세 프로세스를 필요악에서 개발을 이끄는 원동력으로 변환합니다.
 
-### Template-Driven Quality: How Structure Constrains LLMs for Better Outcomes
+### 템플릿 중심 품질: 구조가 LLM을 더 나은 결과로 유도하는 방법
 
-The true power of these commands lies not just in automation, but in how the templates guide LLM behavior toward higher-quality specifications. The templates act as sophisticated prompts that constrain the LLM's output in productive ways:
+이 커맨드들의 진정한 힘은 자동화에만 있는 것이 아니라, 템플릿이 LLM의 행동을 더 높은 품질의 명세를 향해 어떻게 안내하는지에 있습니다. 템플릿은 LLM의 출력을 생산적인 방식으로 제약하는 정교한 프롬프트 역할을 합니다.
 
-#### 1. **Preventing Premature Implementation Details**
+#### 1. **조기 구현 세부 사항 방지**
 
-The feature specification template explicitly instructs:
+기능 명세 템플릿은 다음을 명시적으로 지시합니다.
 
 ```text
 - ✅ Focus on WHAT users need and WHY
 - ❌ Avoid HOW to implement (no tech stack, APIs, code structure)
 ```
 
-This constraint forces the LLM to maintain proper abstraction levels. When an LLM might naturally jump to "implement using React with Redux," the template keeps it focused on "users need real-time updates of their data." This separation ensures specifications remain stable even as implementation technologies change.
+이 제약은 LLM이 적절한 추상화 수준을 유지하도록 강제합니다. LLM이 자연스럽게 "React와 Redux를 사용하여 구현"으로 넘어갈 수 있는 상황에서, 템플릿은 "사용자는 데이터의 실시간 업데이트가 필요합니다"에 집중하게 합니다. 이 분리는 구현 기술이 변경되더라도 명세가 안정적으로 유지되도록 보장합니다.
 
-#### 2. **Forcing Explicit Uncertainty Markers**
+#### 2. **명시적 불확실성 마커 강제**
 
-Both templates mandate the use of `[NEEDS CLARIFICATION]` markers:
+두 템플릿 모두 `[NEEDS CLARIFICATION]` 마커의 사용을 의무화합니다.
 
 ```text
 When creating this spec from a user prompt:
@@ -187,11 +187,11 @@ When creating this spec from a user prompt:
 2. **Don't guess**: If the prompt doesn't specify something, mark it
 ```
 
-This prevents the common LLM behavior of making plausible but potentially incorrect assumptions. Instead of guessing that a "login system" uses email/password authentication, the LLM must mark it as `[NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]`.
+이는 그럴듯하지만 잠재적으로 잘못된 가정을 만드는 일반적인 LLM 동작을 방지합니다. "로그인 시스템"이 이메일/비밀번호 인증을 사용한다고 추측하는 대신, LLM은 `[NEEDS CLARIFICATION: auth method not specified - email/password, SSO, OAuth?]`로 표시해야 합니다.
 
-#### 3. **Structured Thinking Through Checklists**
+#### 3. **체크리스트를 통한 구조적 사고**
 
-The templates include comprehensive checklists that act as "unit tests" for the specification:
+템플릿에는 명세의 "단위 테스트" 역할을 하는 포괄적인 체크리스트가 포함되어 있습니다.
 
 ```markdown
 ### Requirement Completeness
@@ -201,11 +201,11 @@ The templates include comprehensive checklists that act as "unit tests" for the 
 - [ ] Success criteria are measurable
 ```
 
-These checklists force the LLM to self-review its output systematically, catching gaps that might otherwise slip through. It's like giving the LLM a quality assurance framework.
+이 체크리스트는 LLM이 출력을 체계적으로 자체 검토하도록 강제하여, 그냥 지나칠 수 있는 공백을 발견합니다. LLM에게 품질 보증 프레임워크를 제공하는 것과 같습니다.
 
-#### 4. **Constitutional Compliance Through Gates**
+#### 4. **게이트를 통한 컨스티튜션 준수**
 
-The implementation plan template enforces architectural principles through phase gates:
+구현 계획 템플릿은 단계별 게이트를 통해 아키텍처 원칙을 강제합니다.
 
 ```markdown
 ### Phase -1: Pre-Implementation Gates
@@ -221,11 +221,11 @@ The implementation plan template enforces architectural principles through phase
 - [ ] Single model representation?
 ```
 
-These gates prevent over-engineering by making the LLM explicitly justify any complexity. If a gate fails, the LLM must document why in the "Complexity Tracking" section, creating accountability for architectural decisions.
+이 게이트들은 LLM이 복잡성의 모든 계층을 명시적으로 정당화하도록 강제하여 과도한 엔지니어링을 방지합니다. 게이트가 실패하면, LLM은 "복잡도 추적" 섹션에 그 이유를 문서화해야 하며, 이로써 아키텍처 결정에 대한 책임이 생깁니다.
 
-#### 5. **Hierarchical Detail Management**
+#### 5. **계층적 세부 사항 관리**
 
-The templates enforce proper information architecture:
+템플릿은 적절한 정보 아키텍처를 강제합니다.
 
 ```text
 **IMPORTANT**: This implementation plan should remain high-level and readable.
@@ -233,11 +233,11 @@ Any code samples, detailed algorithms, or extensive technical specifications
 must be placed in the appropriate `implementation-details/` file
 ```
 
-This prevents the common problem of specifications becoming unreadable code dumps. The LLM learns to maintain appropriate detail levels, extracting complexity to separate files while keeping the main document navigable.
+이는 명세가 읽을 수 없는 코드 덩어리가 되는 일반적인 문제를 방지합니다. LLM은 복잡도를 별도 파일로 추출하면서 주요 문서를 탐색 가능하게 유지하는 적절한 세부 사항 수준을 유지하는 법을 배웁니다.
 
-#### 6. **Test-First Thinking**
+#### 6. **테스트 우선 사고**
 
-The implementation template enforces test-first development:
+구현 템플릿은 테스트 우선 개발을 강제합니다.
 
 ```text
 ### File Creation Order
@@ -246,42 +246,42 @@ The implementation template enforces test-first development:
 3. Create source files to make tests pass
 ```
 
-This ordering constraint ensures the LLM thinks about testability and contracts before implementation, leading to more robust and verifiable specifications.
+이 순서 제약은 LLM이 구현 전에 테스트 가능성과 계약에 대해 생각하도록 하여, 더 견고하고 검증 가능한 명세를 만들어냅니다.
 
-#### 7. **Preventing Speculative Features**
+#### 7. **추측성 기능 방지**
 
-Templates explicitly discourage speculation:
+템플릿은 명시적으로 추측을 억제합니다.
 
 ```text
 - [ ] No speculative or "might need" features
 - [ ] All phases have clear prerequisites and deliverables
 ```
 
-This stops the LLM from adding "nice to have" features that complicate implementation. Every feature must trace back to a concrete user story with clear acceptance criteria.
+이는 LLM이 구현을 복잡하게 만드는 "있으면 좋을" 기능들을 추가하는 것을 막습니다. 모든 기능은 명확한 인수 기준이 있는 구체적인 사용자 스토리로 소급될 수 있어야 합니다.
 
-### The Compound Effect
+### 복합 효과
 
-These constraints work together to produce specifications that are:
+이러한 제약들이 함께 작용하여 다음과 같은 명세를 생성합니다.
 
-- **Complete**: Checklists ensure nothing is forgotten
-- **Unambiguous**: Forced clarification markers highlight uncertainties
-- **Testable**: Test-first thinking baked into the process
-- **Maintainable**: Proper abstraction levels and information hierarchy
-- **Implementable**: Clear phases with concrete deliverables
+- **완전함**: 체크리스트가 아무것도 잊어버리지 않도록 보장
+- **명확함**: 강제된 명확화 마커가 불확실성을 부각
+- **테스트 가능함**: 테스트 우선 사고가 프로세스에 내재화
+- **유지보수 가능함**: 적절한 추상화 수준과 정보 계층
+- **구현 가능함**: 구체적인 산출물이 있는 명확한 단계
 
-The templates transform the LLM from a creative writer into a disciplined specification engineer, channeling its capabilities toward producing consistently high-quality, executable specifications that truly drive development.
+템플릿은 LLM을 창의적인 작가에서 규율 있는 명세 엔지니어로 변환시켜, 개발을 진정으로 이끄는 일관되게 높은 품질의 실행 가능한 명세를 생성하는 방향으로 LLM의 역량을 집중시킵니다.
 
-## The Constitutional Foundation: Enforcing Architectural Discipline
+## 컨스티튜션 기반: 아키텍처 규율 강제
 
-At the heart of SDD lies a constitution—a set of immutable principles that govern how specifications become code. The constitution (`memory/constitution.md`) acts as the architectural DNA of the system, ensuring that every generated implementation maintains consistency, simplicity, and quality.
+SDD의 핵심에는 컨스티튜션이 있습니다. 명세가 코드가 되는 방식을 지배하는 불변의 원칙들의 집합입니다. 컨스티튜션(`memory/constitution.md`)은 시스템의 아키텍처 DNA로 작용하여, 생성된 모든 구현이 일관성, 단순성, 품질을 유지하도록 보장합니다.
 
-### The Nine Articles of Development
+### 개발의 아홉 가지 조항
 
-The constitution defines nine articles that shape every aspect of the development process:
+컨스티튜션은 개발 프로세스의 모든 측면을 형성하는 아홉 가지 조항을 정의합니다.
 
-#### Article I: Library-First Principle
+#### 제1조: 라이브러리 우선 원칙
 
-Every feature must begin as a standalone library—no exceptions. This forces modular design from the start:
+모든 기능은 독립형 라이브러리로 시작해야 합니다. 예외는 없습니다. 이는 처음부터 모듈식 설계를 강제합니다.
 
 ```text
 Every feature in Specify MUST begin its existence as a standalone library.
@@ -289,11 +289,11 @@ No feature shall be implemented directly within application code without
 first being abstracted into a reusable library component.
 ```
 
-This principle ensures that specifications generate modular, reusable code rather than monolithic applications. When the LLM generates an implementation plan, it must structure features as libraries with clear boundaries and minimal dependencies.
+이 원칙은 명세가 모놀리식 애플리케이션이 아닌 모듈식이고 재사용 가능한 코드를 생성하도록 보장합니다. LLM이 구현 계획을 생성할 때, 기능을 명확한 경계와 최소한의 의존성을 가진 라이브러리로 구조화해야 합니다.
 
-#### Article II: CLI Interface Mandate
+#### 제2조: CLI 인터페이스 의무
 
-Every library must expose its functionality through a command-line interface:
+모든 라이브러리는 커맨드라인 인터페이스를 통해 기능을 노출해야 합니다.
 
 ```text
 All CLI interfaces MUST:
@@ -302,11 +302,11 @@ All CLI interfaces MUST:
 - Support JSON format for structured data exchange
 ```
 
-This enforces observability and testability. The LLM cannot hide functionality inside opaque classes—everything must be accessible and verifiable through text-based interfaces.
+이는 관찰 가능성과 테스트 가능성을 강제합니다. LLM은 불투명한 클래스 내부에 기능을 숨길 수 없습니다. 모든 것은 텍스트 기반 인터페이스를 통해 접근 가능하고 검증 가능해야 합니다.
 
-#### Article III: Test-First Imperative
+#### 제3조: 테스트 우선 의무
 
-The most transformative article—no code before tests:
+가장 변혁적인 조항입니다. 테스트 없이는 코드도 없습니다.
 
 ```text
 This is NON-NEGOTIABLE: All implementation MUST follow strict Test-Driven Development.
@@ -316,11 +316,11 @@ No implementation code shall be written before:
 3. Tests are confirmed to FAIL (Red phase)
 ```
 
-This completely inverts traditional AI code generation. Instead of generating code and hoping it works, the LLM must first generate comprehensive tests that define behavior, get them approved, and only then generate implementation.
+이는 전통적인 AI 코드 생성을 완전히 역전시킵니다. 코드를 생성하고 작동하기를 바라는 대신, LLM은 먼저 동작을 정의하는 포괄적인 테스트를 생성하고 승인을 받은 후에만 구현을 생성해야 합니다.
 
-#### Articles VII & VIII: Simplicity and Anti-Abstraction
+#### 제7조 & 제8조: 단순성 및 반추상화
 
-These paired articles combat over-engineering:
+이 쌍을 이루는 조항들은 과도한 엔지니어링에 맞섭니다.
 
 ```text
 Section 7.3: Minimal Project Structure
@@ -331,11 +331,11 @@ Section 8.1: Framework Trust
 - Use framework features directly rather than wrapping them
 ```
 
-When an LLM might naturally create elaborate abstractions, these articles force it to justify every layer of complexity. The implementation plan template's "Phase -1 Gates" directly enforce these principles.
+LLM이 자연스럽게 복잡한 추상화를 만들 수 있는 상황에서, 이 조항들은 복잡성의 모든 계층을 정당화하도록 강제합니다. 구현 계획 템플릿의 "Phase -1 게이트"가 이 원칙들을 직접적으로 강제합니다.
 
-#### Article IX: Integration-First Testing
+#### 제9조: 통합 우선 테스트
 
-Prioritizes real-world testing over isolated unit tests:
+격리된 단위 테스트보다 실제 세계 테스트를 우선시합니다.
 
 ```text
 Tests MUST use realistic environments:
@@ -344,11 +344,11 @@ Tests MUST use realistic environments:
 - Contract tests mandatory before implementation
 ```
 
-This ensures generated code works in practice, not just in theory.
+이는 생성된 코드가 이론적으로만이 아니라 실제로 작동하도록 보장합니다.
 
-### Constitutional Enforcement Through Templates
+### 템플릿을 통한 컨스티튜션 강제
 
-The implementation plan template operationalizes these articles through concrete checkpoints:
+구현 계획 템플릿은 구체적인 체크포인트를 통해 이 조항들을 실행 가능하게 만듭니다.
 
 ```markdown
 ### Phase -1: Pre-Implementation Gates
@@ -369,20 +369,20 @@ The implementation plan template operationalizes these articles through concrete
 - [ ] Contract tests written?
 ```
 
-These gates act as compile-time checks for architectural principles. The LLM cannot proceed without either passing the gates or documenting justified exceptions in the "Complexity Tracking" section.
+이 게이트들은 아키텍처 원칙을 위한 컴파일 타임 검사 역할을 합니다. LLM은 게이트를 통과하거나 "복잡도 추적" 섹션에 정당화된 예외를 문서화하지 않고는 진행할 수 없습니다.
 
-### The Power of Immutable Principles
+### 불변 원칙의 힘
 
-The constitution's power lies in its immutability. While implementation details can evolve, the core principles remain constant. This provides:
+컨스티튜션의 힘은 불변성에 있습니다. 구현 세부 사항은 진화할 수 있지만, 핵심 원칙은 변하지 않습니다. 이는 다음을 제공합니다.
 
-1. **Consistency Across Time**: Code generated today follows the same principles as code generated next year
-2. **Consistency Across LLMs**: Different AI models produce architecturally compatible code
-3. **Architectural Integrity**: Every feature reinforces rather than undermines the system design
-4. **Quality Guarantees**: Test-first, library-first, and simplicity principles ensure maintainable code
+1. **시간에 걸친 일관성**: 오늘 생성된 코드는 내년에 생성된 코드와 동일한 원칙을 따릅니다
+2. **LLM에 걸친 일관성**: 다양한 AI 모델이 아키텍처적으로 호환되는 코드를 생성합니다
+3. **아키텍처 무결성**: 모든 기능이 시스템 설계를 약화시키기보다 강화합니다
+4. **품질 보장**: 테스트 우선, 라이브러리 우선, 단순성 원칙이 유지보수 가능한 코드를 보장합니다
 
-### Constitutional Evolution
+### 컨스티튜션의 진화
 
-While principles are immutable, their application can evolve:
+원칙은 불변이지만, 그 적용은 진화할 수 있습니다.
 
 ```text
 Section 4.2: Amendment Process
@@ -392,21 +392,21 @@ Modifications to this constitution require:
 - Backwards compatibility assessment
 ```
 
-This allows the methodology to learn and improve while maintaining stability. The constitution shows its own evolution with dated amendments, demonstrating how principles can be refined based on real-world experience.
+이를 통해 방법론이 안정성을 유지하면서도 배우고 개선할 수 있습니다. 컨스티튜션은 날짜가 표시된 수정 사항과 함께 자체 진화를 보여주며, 원칙이 실제 경험을 바탕으로 어떻게 개선될 수 있는지 보여줍니다.
 
-### Beyond Rules: A Development Philosophy
+### 규칙을 넘어서: 개발 철학
 
-The constitution isn't just a rulebook—it's a philosophy that shapes how LLMs think about code generation:
+컨스티튜션은 단순한 규칙집이 아닙니다. LLM이 코드 생성에 대해 생각하는 방식을 형성하는 철학입니다.
 
-- **Observability Over Opacity**: Everything must be inspectable through CLI interfaces
-- **Simplicity Over Cleverness**: Start simple, add complexity only when proven necessary
-- **Integration Over Isolation**: Test in real environments, not artificial ones
-- **Modularity Over Monoliths**: Every feature is a library with clear boundaries
+- **불투명함보다 관찰 가능성**: 모든 것이 CLI 인터페이스를 통해 검사 가능해야 합니다
+- **영리함보다 단순함**: 단순하게 시작하고, 필요성이 증명된 경우에만 복잡성을 추가합니다
+- **격리보다 통합**: 인위적인 환경이 아닌 실제 환경에서 테스트합니다
+- **모놀리스보다 모듈성**: 모든 기능은 명확한 경계를 가진 라이브러리입니다
 
-By embedding these principles into the specification and planning process, SDD ensures that generated code isn't just functional—it's maintainable, testable, and architecturally sound. The constitution transforms AI from a code generator into an architectural partner that respects and reinforces system design principles.
+이 원칙들을 명세 및 계획 프로세스에 내재화함으로써, SDD는 생성된 코드가 단순히 기능적인 것을 넘어 유지보수 가능하고, 테스트 가능하며, 아키텍처적으로 건전하도록 보장합니다. 컨스티튜션은 AI를 단순한 코드 생성기에서 시스템 설계 원칙을 존중하고 강화하는 아키텍처 파트너로 변환시킵니다.
 
-## The Transformation
+## 변환
 
-This isn't about replacing developers or automating creativity. It's about amplifying human capability by automating mechanical translation. It's about creating a tight feedback loop where specifications, research, and code evolve together, each iteration bringing deeper understanding and better alignment between intent and implementation.
+이것은 개발자를 대체하거나 창의성을 자동화하는 것에 관한 것이 아닙니다. 기계적 변환을 자동화하여 인간의 역량을 증폭시키는 것에 관한 것입니다. 명세, 리서치, 코드가 함께 진화하는 긴밀한 피드백 루프를 만들어, 각 반복이 의도와 구현 사이의 더 깊은 이해와 더 나은 일치를 가져오는 것에 관한 것입니다.
 
-Software development needs better tools for maintaining alignment between intent and implementation. SDD provides the methodology for achieving this alignment through executable specifications that generate code rather than merely guiding it.
+소프트웨어 개발은 의도와 구현 사이의 일치를 유지하기 위한 더 나은 도구가 필요합니다. SDD는 단순히 안내하는 것이 아닌 코드를 생성하는 실행 가능한 명세를 통해 이 일치를 달성하는 방법론을 제공합니다.
